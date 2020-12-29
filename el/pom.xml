@@ -64,7 +64,7 @@
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<configuration>
 					<url>http://192.168.43.232:8080/manager/text</url>
-					<path>/el</path>
+					<path>/jstlel</path>
 					<username>admin</username>
 					<password>manager</password>
 				</configuration>
