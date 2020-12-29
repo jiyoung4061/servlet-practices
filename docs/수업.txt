@@ -1,0 +1,6 @@
+request, response 모두 tomcat이 만든 것!
+
+
+serverside include >> 계속해서 반복되는 url을 처리할 때 사용!
+<jsp:include page="/WEB-INF/views/includes/navigation.jsp"/>
+해당부분을 다음 jsp파일로 교체해 보여줌!
