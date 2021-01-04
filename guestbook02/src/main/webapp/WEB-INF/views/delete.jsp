@@ -15,7 +15,5 @@
 <title>방명록</title>
 </head>
 <body>
-	<%= no %>
-	<%= password %>
 </body>
 </html>
