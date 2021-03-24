@@ -5,16 +5,14 @@
     
 <%
 	request.setCharacterEncoding("utf-8");
-	String name = request.getParameter("name");
-	String password = request.getParameter("password");
-	String message = request.getParameter("message");
-	String reg_date = request.getParameter("reg_date");
+	String host = request.getParameter("host");
+	String region = request.getParameter("region");
+	Long value = Long.valueOf(request.getParameter("value"));
 	
 	GuestBookVo vo = new GuestBookVo();
-	vo.setName(name);
-	vo.setPassword(password);
-	vo.setMessage(message);
-	vo.setReg_date(reg_date);
+	vo.setHost(host);
+	vo.setRegion(region);
+	vo.setValue(value);
 	
 	new GuestBookDao().insert(vo);
 	response.sendRedirect("/guestbook01/index.jsp");

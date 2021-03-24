@@ -16,11 +16,9 @@
 	<form action="add.jsp" method="post">
 	<table border=1 width=500>
 		<tr>
-			<td>이름</td><td><input type="text" name="name"></td>
-			<td>비밀번호</td><td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td colspan=4><textarea name="message" cols=60 rows=5></textarea></td>
+			<td>host</td><td><input type="text" name="host"></td>
+			<td>region</td><td><input type="text" name="region"></td>
+			<td>value</td><td><input type="text" name="value"></td>
 		</tr>
 		<tr>
 			<td colspan=4 align=right><input type="submit" VALUE="등록"></td>
@@ -36,12 +34,9 @@
 		%>
 		<tr>
 			<td>[<%= count-index++ %>]</td>
-			<td><%= vo.getName() %></td>
-			<td><%= vo.getReg_date() %></td>
-			<td><a href="/guestbook01/deleteform.jsp?no=<%=vo.getNo()%>">삭제</a></td>
-		</tr>
-		<tr>
-			<td colspan=4><%= vo.getMessage().replaceAll("\n", "<br/>") %></td>
+			<td><%= vo.getHost() %></td>
+			<td><%= vo.getRegion() %></td>
+			<td><%= vo.getValue() %></td>
 		</tr>
 		<%} %>
 	</table>

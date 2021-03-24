@@ -1,45 +1,31 @@
 package com.markany.guestbook.vo;
 
 public class GuestBookVo {
-	private long no;
-	private String name;
-	private String password;
-	private String message;
-	private String regDate;
+	private long value;
+	private String host;
+	private String region;
 	
-	public long getNo() {
-		return no;
+	public long getValue() {
+		return value;
 	}
-	public void setNo(long no) {
-		this.no = no;
+	public void setValue(long value) {
+		this.value = value;
 	}
-	public String getName() {
-		return name;
+	public String getHost() {
+		return host;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setHost(String host) {
+		this.host = host;
 	}
-	public String getPassword() {
-		return password;
+	public String getRegion() {
+		return region;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setRegion(String region) {
+		this.region = region;
 	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public String getReg_date() {
-		return regDate;
-	}
-	public void setReg_date(String regDate) {
-		this.regDate = regDate;
-	}
+	
 	@Override
 	public String toString() {
-		return "GuestBookVo [no=" + no + ", name=" + name + ", password=" + password + ", message=" + message
-				+ ", reg_date=" + regDate + "]";
-	}
+		return "GuestBookVo [value=" + value + ", host=" + host + ", region=" + region + "]";
+	}	
 }

@@ -9,14 +9,15 @@
 	</parent>
 	<artifactId>guestbook01</artifactId>
 	<packaging>war</packaging>
-	
+
 	<dependencies>
-	<!-- MariaDB JDBC Driver -->
+		<!-- https://mvnrepository.com/artifact/org.influxdb/influxdb-java -->
 		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-			<version>2.4.4</version>
+			<groupId>org.influxdb</groupId>
+			<artifactId>influxdb-java</artifactId>
+			<version>2.17</version>
 		</dependency>
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -31,7 +32,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>guestbook01</finalName>
 		<resources>
