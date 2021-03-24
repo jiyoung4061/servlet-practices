@@ -44,9 +44,10 @@ public class GuestBookDao {
 			    .build());
 	}
 	
-	public boolean delete(String no, String password) {
+	public boolean delete(String host, String region) {
 		
-		
+		System.out.println("host:" + host);
+		System.out.println("region:" + region);
 		
 		return true;
 //		boolean result = false;

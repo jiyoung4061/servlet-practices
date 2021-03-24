@@ -3,12 +3,12 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<% 
+<%
 	List<GuestBookVo> list = new GuestBookDao().findAll();
-	String host = request.getParameter("host");
-	String region = request.getParameter("region");
-	System.out.println("host:"+host);
-	System.out.println("region:"+region);
+String host = request.getParameter("host");
+String region = request.getParameter("region");
+System.out.println("host:" + host);
+System.out.println("region:" + region);
 %>
 <!DOCTYPE html>
 <html>
@@ -18,15 +18,14 @@
 </head>
 <body>
 	<form method="post" action="delete.jsp">
-	<!-- <input type='hidden' name="no" value=<%=no%>> -->
-	<table>
-		<tr>
-			<td>비밀번호</td>
-			<td><input type="password" name="password"></td>
-			<td><input type="submit" value="삭제"></td>
-			<td><a href="/guestbook01/index.jsp">메인으로 돌아가기</a></td>
-		</tr>
-	</table>
+		<input type='hidden' name="host" value=<%=host%>> 
+		<input type='hidden' name="region" value=<%=region%>>
+		<div>
+			host = <%=host%> / region = <%=region%> 을 삭제하시겠습니까? 
+		</div>
+		<br/>
+		<input type="submit" value="삭제"> 
+		<a href="/guestbook01/index.jsp">메인으로 돌아가기</a>
 	</form>
 </body>
 </html>
