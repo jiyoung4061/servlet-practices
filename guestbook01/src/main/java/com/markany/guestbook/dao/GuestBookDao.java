@@ -44,12 +44,12 @@ public class GuestBookDao {
 			    .build());
 	}
 	
-	public boolean delete(String host, String region) {
+	public void delete(String host, String region) {
+		String queryStatement = "delete from memory where host=" + host +" and region=" + region;
+		InfluxDB influxDB = getConnection();
+		influxDB.query(new Query(queryStatement));
 		
-		System.out.println("host:" + host);
-		System.out.println("region:" + region);
 		
-		return true;
 //		boolean result = false;
 //		Connection conn = null;
 //		Statement stmt = null;
