@@ -17,6 +17,7 @@ import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.Point;
 import org.influxdb.dto.Query;
 import org.influxdb.dto.QueryResult;
+import org.influxdb.impl.InfluxDBResultMapper;
 
 import com.markany.guestbook.vo.GuestBookVo;
 
@@ -29,7 +30,11 @@ public class GuestBookDao {
 		
 		System.out.println("res:" + queryResult);
 		
-		return null;
+		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper(); 
+		// thread-safe - can be reused 
+		List<GuestBookVo> list = resultMapper.toPOJO(queryResult, GuestBookVo.class);
+
+		return list;
 //		List<GuestBookVo> list = new ArrayList<>();
 //		Connection conn = null;
 //		ResultSet rs = null;
