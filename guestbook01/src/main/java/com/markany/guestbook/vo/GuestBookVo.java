@@ -1,8 +1,18 @@
 package com.markany.guestbook.vo;
 
+import org.influxdb.annotation.Column;
+import org.influxdb.annotation.Measurement;
+
+@Measurement(name="memory")
 public class GuestBookVo {
+	
+	@Column(name="value")
 	private long value;
+	
+	@Column(name="host")
 	private String host;
+	
+	@Column(name="region")
 	private String region;
 	
 	public long getValue() {
