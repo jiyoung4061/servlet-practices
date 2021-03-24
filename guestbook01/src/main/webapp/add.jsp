@@ -7,7 +7,7 @@
 	request.setCharacterEncoding("utf-8");
 	String host = request.getParameter("host");
 	String region = request.getParameter("region");
-	Long value = Long.valueOf(request.getParameter("value"));
+	double value = Double.valueOf(request.getParameter("value"));
 	
 	GuestBookVo vo = new GuestBookVo();
 	vo.setHost(host);

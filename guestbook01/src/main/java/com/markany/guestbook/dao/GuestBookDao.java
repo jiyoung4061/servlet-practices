@@ -24,63 +24,16 @@ import com.markany.guestbook.vo.GuestBookVo;
 public class GuestBookDao {
 	
 	public List<GuestBookVo> findAll() {
-		
 		InfluxDB influxDB = getConnection();
 		QueryResult queryResult = influxDB.query(new Query("SELECT * FROM memory"));
 		
-		
-		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper(); 
-		// thread-safe - can be reused 
+		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper();
 		List<GuestBookVo> list = resultMapper.toPOJO(queryResult, GuestBookVo.class);
 
-		System.out.println("res:" + list);
 		return list;
-//		List<GuestBookVo> list = new ArrayList<>();
-//		Connection conn = null;
-//		ResultSet rs = null;
-//		PreparedStatement pstmt = null;
-//		try {
-//			conn = getConnection();
-//			String sql = " select no, name, password, message, reg_date " + " from guestbook " + " order by no desc ";
-//			pstmt = conn.prepareStatement(sql);
-//			rs = pstmt.executeQuery();
-//			while (rs.next()) {
-//				Long no = rs.getLong(1);
-//				String name = rs.getString(2);
-//				String password = rs.getString(3);
-//				String message = rs.getString(4);
-//				String reg_date = rs.getString(5);
-//				GuestBookVo vo = new GuestBookVo();
-//				vo.setNo(no);
-//				vo.setName(name);
-//				vo.setPassword(password);
-//				vo.setMessage(message);
-//				vo.setReg_date(reg_date);
-//				list.add(vo);
-//			}
-//		} catch (SQLException e) {
-//			System.out.println("error:" + e);
-//		} finally {
-//			try {
-//				if (rs != null) {
-//					rs.close();
-//				}
-//				if (pstmt != null) {
-//					pstmt.close();
-//				}
-//				if (conn != null) {
-//					conn.close();
-//				}
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		return list;
 	}
 
 	public void insert(GuestBookVo vo) {
-//		boolean result = false;
-		
 		InfluxDB influxDB = getConnection();
 		
 		influxDB.write(Point.measurement("memory")
@@ -89,11 +42,7 @@ public class GuestBookDao {
 			    .tag("region", vo.getRegion())
 			    .addField("value", vo.getValue())
 			    .build());
-		try {
-			Thread.sleep(5_000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		System.out.println(vo);
 		
 //		Connection conn = null;
 //		Statement stmt = null;
@@ -176,7 +125,6 @@ public class GuestBookDao {
 		// Enable batch writes to get better performance.
 		influxDB.enableBatch(BatchOptions.DEFAULTS);
 		
-		System.out.println("db 연결");
 		return influxDB;
 //		Connection conn = null;
 //		try {

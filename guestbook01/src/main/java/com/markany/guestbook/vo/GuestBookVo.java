@@ -7,7 +7,7 @@ import org.influxdb.annotation.Measurement;
 public class GuestBookVo {
 	
 	@Column(name="value")
-	private long value;
+	private double value;
 	
 	@Column(name="host")
 	private String host;
@@ -15,10 +15,10 @@ public class GuestBookVo {
 	@Column(name="region")
 	private String region;
 	
-	public long getValue() {
+	public double getValue() {
 		return value;
 	}
-	public void setValue(long value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 	public String getHost() {
