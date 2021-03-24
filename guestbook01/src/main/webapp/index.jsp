@@ -36,7 +36,7 @@
 			<td><%= vo.getHost() %></td>
 			<td><%= vo.getRegion() %></td>
 			<td><%= vo.getValue() %></td>
-			<td><a href="/guestbook01?a=deleteform&no=">삭제</a></td>
+			<td><a href="/guestbook01/deleteform.jsp?host=<%= vo.getHost()%>&&region=<%= vo.getRegion()%>">삭제</a></td>
 			<td><a href="/guestbook01?a=updateform&no=">수정</a></td>
 		</tr>
 		<%} %>

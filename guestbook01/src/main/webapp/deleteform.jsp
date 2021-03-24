@@ -5,8 +5,10 @@
 	pageEncoding="UTF-8"%>
 <% 
 	List<GuestBookVo> list = new GuestBookDao().findAll();
-	String no = request.getParameter("no");
-	System.out.println("no:"+no);
+	String host = request.getParameter("host");
+	String region = request.getParameter("region");
+	System.out.println("host:"+host);
+	System.out.println("region:"+region);
 %>
 <!DOCTYPE html>
 <html>
