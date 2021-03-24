@@ -28,12 +28,12 @@ public class GuestBookDao {
 		InfluxDB influxDB = getConnection();
 		QueryResult queryResult = influxDB.query(new Query("SELECT * FROM memory"));
 		
-		System.out.println("res:" + queryResult);
 		
 		InfluxDBResultMapper resultMapper = new InfluxDBResultMapper(); 
 		// thread-safe - can be reused 
 		List<GuestBookVo> list = resultMapper.toPOJO(queryResult, GuestBookVo.class);
 
+		System.out.println("res:" + list);
 		return list;
 //		List<GuestBookVo> list = new ArrayList<>();
 //		Connection conn = null;

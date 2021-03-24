@@ -4,7 +4,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+	System.out.println("index!!");
 	List<GuestBookVo> list = new GuestBookDao().findAll();
+	System.out.println("index:" + list);
 %>
 <!DOCTYPE html>
 <html>
