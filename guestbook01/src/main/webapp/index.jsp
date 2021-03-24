@@ -28,15 +28,16 @@
 	<br>
 	<table width=510 border=1>
 		<% 
-		int count = list.size();
 		int index = 0;
 		for(GuestBookVo vo : list) {
 		%>
 		<tr>
-			<td>[<%= count-index++ %>]</td>
+			<td><%= index++ %></td>
 			<td><%= vo.getHost() %></td>
 			<td><%= vo.getRegion() %></td>
 			<td><%= vo.getValue() %></td>
+			<td><a href="/guestbook01?a=deleteform&no=">삭제</a></td>
+			<td><a href="/guestbook01?a=updateform&no=">수정</a></td>
 		</tr>
 		<%} %>
 	</table>

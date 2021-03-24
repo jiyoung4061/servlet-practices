@@ -42,47 +42,13 @@ public class GuestBookDao {
 			    .tag("region", vo.getRegion())
 			    .addField("value", vo.getValue())
 			    .build());
-		System.out.println(vo);
-		
-//		Connection conn = null;
-//		Statement stmt = null;
-//		PreparedStatement pstmt = null;
-//
-//		try {
-//			conn = getConnection(); // sqlexception 여기서 처리
-//			// 3-1. SQL 준비
-//			String sql = " insert " + " into guestbook " + " values(null, ?, ?, ?, now())";
-//			pstmt = conn.prepareStatement(sql);
-//
-//			// 4. 바인딩
-//			pstmt.setString(1, vo.getName());
-//			pstmt.setString(2, vo.getPassword());
-//			pstmt.setString(3, vo.getMessage());
-//
-//			// 5. sql문 실행
-//			int count = pstmt.executeUpdate();
-//
-//			result = count == 1;
-//
-//		} catch (SQLException e) {
-//			System.out.println("error:" + e);
-//		} finally {
-//			try {
-//				// 3. 자원정리
-//				if (stmt != null) {
-//					stmt.close();
-//				}
-//				if (conn != null) {
-//					conn.close();
-//				}
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		return result;
 	}
 	
-//	public boolean delete(String no, String password) {
+	public boolean delete(String no, String password) {
+		
+		
+		
+		return true;
 //		boolean result = false;
 //		Connection conn = null;
 //		Statement stmt = null;
@@ -112,8 +78,8 @@ public class GuestBookDao {
 //			}
 //		}
 //		return result;
-//	}
-//	
+	}
+	
 	private InfluxDB getConnection() throws InfluxDBException{
 		
 		final String serverURL = "http://127.0.0.1:8086", username = "markany", password = "markany2021";
