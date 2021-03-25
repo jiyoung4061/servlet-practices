@@ -16,6 +16,7 @@ public class MySiteWebApplicationInitializer extends AbstractAnnotationConfigDis
 	@Override
 	protected Class<?>[] getRootConfigClasses() { 
 		// Root Application Context
+		System.out.println("root Application context");
 		return new Class<?>[] { AppConfig.class };
 	}
 
