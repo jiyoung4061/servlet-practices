@@ -27,6 +27,7 @@ public class MainController {
 	
 	@RequestMapping("/main")
 	public List<H2oFeet> h2o_list(@PathVariable("list")String list){
+		System.out.println("Main Controller!");
 		 List<H2oFeet> rs=mainService.h2o_list();
 		 return rs;
 	}

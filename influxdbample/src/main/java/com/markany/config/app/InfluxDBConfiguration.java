@@ -16,12 +16,14 @@ public class InfluxDBConfiguration {
   @Bean
   public InfluxDBConnectionFactory connectionFactory(final InfluxDBProperties properties)
   {
+	  System.out.println("ConnetcionFactory");
     return new InfluxDBConnectionFactory(properties);
   }
 
   @Bean
   public InfluxDBTemplate<Point> influxDBTemplate(final InfluxDBConnectionFactory connectionFactory)
   {
+	  System.out.println("influxDB Template");
     /*
      * You can use your own 'PointCollectionConverter' implementation, e.g. in case
      * you want to use your own custom measurement object.
@@ -32,6 +34,7 @@ public class InfluxDBConfiguration {
   @Bean
   public DefaultInfluxDBTemplate defaultTemplate(final InfluxDBConnectionFactory connectionFactory)
   {
+	  System.out.println("InfluxDB Default Template");
     /*
      * If you are just dealing with Point objects from 'influxdb-java' you could
      * also use an instance of class DefaultInfluxDBTemplate.
