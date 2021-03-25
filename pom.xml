@@ -37,5 +37,6 @@
 		<module>emaillist02</module>
 		<module>guestbook02</module>
 		<module>el</module>
+		<module>influxdbample</module>
 	</modules>
 </project>
