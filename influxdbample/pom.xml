@@ -30,13 +30,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<!-- JCL 제외 -->
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
+		
 		</dependency>
         <!-- Spring Aspect -->
 		<dependency>
@@ -44,15 +38,15 @@
 			<artifactId>spring-aspects</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
-		<!-- Spring Web -->
+		
+		<!-- Spring Web: web만드는데 도와주는 애들(Listener, Filter, Dispatcher등) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- Spring MVC -->
+		<!-- Spring MVC => ActionFactory에서 Action과 같은 역할로 HandlerMapping, ViewreSolver, messageConverter등 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
